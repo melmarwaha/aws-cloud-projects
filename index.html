@@ -1,20 +1,30 @@
-<h1>Melkeet Marwaha - Cloud & Network Security Portfolio</h1>
-<p class="visitor-counter">
-  👀 Visitor Count: <span id="counter">Loading...</span>
-</p>
-<script>
-  const apiUrl = 'https://wc313susdh.execute-api.eu-west-2.amazonaws.com/get';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Melkeet Marwaha - Portfolio</title>
+</head>
+<body>
+  <h1>Melkeet Marwaha - Cloud & Network Security Portfolio</h1>
+  <p class="visitor-counter">
+    👀 Visitor Count: <span id="counter">Loading...</span>
+  </p>
 
-  async function updateVisitorCount() {
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      document.getElementById('counter').innerText = data.views;
-    } catch (error) {
-      console.error('Error fetching visitor count:', error);
-      document.getElementById('counter').innerText = '1';
+  <script>
+    const apiUrl = 'https://wc313susdh.execute-api.eu-west-2.amazonaws.com/get';
+
+    async function updateVisitorCount() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        document.getElementById('counter').innerText = data.views;
+      } catch (error) {
+        console.error('Error fetching visitor count:', error);
+        document.getElementById('counter').innerText = '1';
+      }
     }
-  }
 
-  updateVisitorCount();
-</script>
+    updateVisitorCount();
+  </script>
+</body>
+</html>
